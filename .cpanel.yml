@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - pull: master  # Ganti dengan nama branch yang sesuai
+      repo: https://github.com/yudachandra/Fantasy-Premier-League-with-Vue.git  # Ganti dengan URL repository Git Anda
+    - run: npm install && npm run build  # Ganti dengan perintah build yang sesuai
+    - run: cp -r /home/username/repo/dist/* /home/username/public_html  # Sesuaikan dengan lokasi output build
