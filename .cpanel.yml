@@ -9,5 +9,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/u1427463/public_html/
+    - export DEPLOYPATH=/home/u1427463/public_html/fantasy-premier-league-analytics.net
     - /bin/cp -R images $DEPLOYPATH
