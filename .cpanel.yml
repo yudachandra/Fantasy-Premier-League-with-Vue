@@ -9,5 +9,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/Fantasy-Premier-League-with-Vue/
+    - export DEPLOYPATH=/home/u1427463/Fantasy-Premier-League-with-Vue/
     - /bin/cp -R images $DEPLOYPATH
