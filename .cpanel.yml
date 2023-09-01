@@ -1,7 +1,13 @@
+# ---
+# deployment:
+#   tasks:
+#     - pull: master  # Ganti dengan nama branch yang sesuai
+#       repo: https://github.com/yudachandra/Fantasy-Premier-League-with-Vue.git  # Ganti dengan URL repository Git Anda
+#     - run: npm install && npm run build  # Ganti dengan perintah build yang sesuai
+#     - run: cp -r /home/u1427463/repositories/Fantasy-Premier-League-with-Vue/dist/* /home/u1427463/public_html/Fantasy-Premier-League-with-Vue/  # Sesuaikan dengan lokasi output build
+
 ---
 deployment:
   tasks:
-    - pull: master  # Ganti dengan nama branch yang sesuai
-      repo: https://github.com/yudachandra/Fantasy-Premier-League-with-Vue.git  # Ganti dengan URL repository Git Anda
-    - run: npm install && npm run build  # Ganti dengan perintah build yang sesuai
-    - run: cp -r /home/u1427463/repositories/Fantasy-Premier-League-with-Vue/dist/* /home/u1427463/public_html/Fantasy-Premier-League-with-Vue/  # Sesuaikan dengan lokasi output build
+    - export DEPLOYPATH=/home/Fantasy-Premier-League-with-Vue/
+    - /bin/cp -R images $DEPLOYPATH
