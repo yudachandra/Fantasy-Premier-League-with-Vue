@@ -1,5 +1,18 @@
 <template>
-  <div class="fpl-page">
+  <div class="fpl-page"><div class="fpl-page">
+    <div class="page-header">
+      <div class="powered-by">
+        <a href="https://github.com/vaastav/Fantasy-Premier-League" target="_blank">
+          Powered by vaastav
+        </a>
+      </div>
+      <div class="created-by">
+        <a href="https://www.linkedin.com/in/yudachandrawiguna" target="_blank">
+          Created by Yuda Chandra Wiguna
+        </a>
+      </div>
+    </div>
+    </div>
     <h1 class="page-title">FPL Data</h1>
     <table class="data-table">
       <thead>
@@ -117,6 +130,16 @@ export default {
 </script>
 
 <style scoped>
+
+.powered-by {
+  display: flex;
+  align-items: left;
+}
+
+.created-by {
+  text-align: right;
+}
+
 .fpl-page {
   font-family: Arial, sans-serif;
   padding: 20px;
