@@ -4,13 +4,34 @@
     <table class="data-table">
       <thead>
         <tr>
-          <th @click="sortByColumn('name')">Name</th>
-          <th @click="sortByColumn('position')">Position</th>
-          <th @click="sortByColumn('team')">Team</th>
-          <th @click="sortByColumn('expected_assists')">xA</th>
-          <th @click="sortByColumn('expected_goal_involvements')">xGi</th>
-          <th @click="sortByColumn('expected_goals')">xG</th>
-          <th @click="sortByColumn('expected_goals_conceded')">xGc</th>
+          <th @click="sortByColumn('name')">
+            Name
+            <span v-if="sortKey === 'name'" :class="sortDirection === 1 ? 'arrow-up' : 'arrow-down'"></span>
+          </th>
+          <th @click="sortByColumn('position')">
+            Position
+            <span v-if="sortKey === 'position'" :class="sortDirection === 1 ? 'arrow-up' : 'arrow-down'"></span>
+          </th>
+          <th @click="sortByColumn('team')">
+            Team
+            <span v-if="sortKey === 'team'" :class="sortDirection === 1 ? 'arrow-up' : 'arrow-down'"></span>
+          </th>
+          <th @click="sortByColumn('expected_assists')">
+            xA
+            <span v-if="sortKey === 'expected_assists'" :class="sortDirection === 1 ? 'arrow-up' : 'arrow-down'"></span>
+          </th>
+          <th @click="sortByColumn('expected_goal_involvements')">
+            xGi
+            <span v-if="sortKey === 'expected_goal_involvements'" :class="sortDirection === 1 ? 'arrow-up' : 'arrow-down'"></span>
+          </th>
+          <th @click="sortByColumn('expected_goals')">
+            xG
+            <span v-if="sortKey === 'expected_goals'" :class="sortDirection === 1 ? 'arrow-up' : 'arrow-down'"></span>
+          </th>
+          <th @click="sortByColumn('expected_goals_conceded')">
+            xGc
+            <span v-if="sortKey === 'expected_goals_conceded'" :class="sortDirection === 1 ? 'arrow-up' : 'arrow-down'"></span>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -118,6 +139,22 @@ export default {
   background-color: #0078d4;
   color: #fff;
   cursor: pointer;
+  position: relative; /* Menambahkan posisi relatif untuk elemen span */
+}
+
+.data-table th span {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.data-table th span.arrow-up::before {
+  content: "\25B2"; /* Panah naik (↑) */
+}
+
+.data-table th span.arrow-down::before {
+  content: "\25BC"; /* Panah turun (↓) */
 }
 
 .data-table th,
